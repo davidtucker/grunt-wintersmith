@@ -28,9 +28,7 @@ module.exports = function(grunt) {
     });
   });
 
-  grunt.registerHelper("wintersmith", function(options, callback) {
-    wintersmith( options, callback );
-  });
+  grunt.registerHelper("wintersmith", wintersmith);
 
   grunt.registerHelper("wintersmith-tree", function(options, callback) {
     wintersmith.loadContents( options.contents, callback );
