@@ -2,7 +2,7 @@
   "author": "adam j. sontag <ajpiano@ajpiano.com> (http://ajpiano.com)",
   "name": "grunt-wintersmith",
   "description": "A grunt task and helpers for invoking the Wintersmith static site generator",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/ajpiano/grunt-wintersmith",
   "repository": {
     "type": "git",
@@ -17,11 +17,11 @@
   "main": "grunt.js",
   "dependencies": {
     "grunt": "0.3.x",
-    "wintersmith": "1.0.x"
+    "wintersmith": "1.1.x"
   },
   "devDependencies": {
     "grunt": "~0.3.x",
-    "wintersmith": "1.0.x"
+    "wintersmith": "1.1.x"
   },
   "keywords": [
     "gruntplugin"
