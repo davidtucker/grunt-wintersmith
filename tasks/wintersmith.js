@@ -1,33 +1,29 @@
 module.exports = function(grunt) {
 
-  var wintersmith = require("wintersmith"),
-  pluginsLoaded = false;
+  var wintersmith = require("wintersmith");
 
-  grunt.registerTask("wintersmith", "Use the wintersmith static site generator", function() {
-    var config = grunt.config("wintersmith"),
-    done = this.async(),
-    cwd = process.cwd();
-    // This "pluginsLoaded" and concatenation of cwd is a dirty hack to get around some relative path resolution that I can't quite resolve yet
-    if ( config.plugins && !pluginsLoaded ) {
-      config.plugins.forEach(function(path, i) {
-        config.plugins[i] = cwd + path;
-      });
-      pluginsLoaded = true;
-    }
-    grunt.helper("wintersmith", config, function(error) {
-      if ( error ) {
-        grunt.warn("Wintersmithing failed: "+error);
-      }
+  grunt.registerMultiTask("wintersmith", "Use the wintersmith static site generator", function () {
+    var options = this.options({
+        // create the sites environment, can also be called with a config object. e.g.
+        // {contents: '/some/contents', locals: {powerLevel: 10}}, ..}
+        config: "./config.json"
+      }),
+      done = this.async();
+
+    // build site
+    grunt.helper("wintersmith", options, function (error) {
+      if (error) { throw error; }
       done();
     });
+
   });
 
-  grunt.registerHelper("wintersmith", function(options, callback) {
-      wintersmith( options, callback );
-  });
-
-  grunt.registerHelper("wintersmith-tree", function(options, callback) {
-    wintersmith.loadContents( options.contents, callback );
+  grunt.registerHelper("wintersmith", function (options, callback) {
+    // create the sites environment, can also be called with a config object. e.g.
+    // {contents: '/some/contents', locals: {powerLevel: 10}}, ..}
+    var env = wintersmith(options.config);
+    // build site
+    env.build(callback);
   });
 
 };
