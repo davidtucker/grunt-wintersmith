@@ -16,12 +16,12 @@
   ],
   "main": "grunt.js",
   "dependencies": {
-    "grunt": "0.3.x",
-    "wintersmith": "1.1.x"
+    "grunt": "~0.4.1",
+    "wintersmith": "~2.0.5"
   },
   "devDependencies": {
-    "grunt": "~0.3.x",
-    "wintersmith": "1.1.x"
+    "grunt": "~0.4.1",
+    "wintersmith": "~2.0.5"
   },
   "keywords": [
     "gruntplugin"
