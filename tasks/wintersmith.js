@@ -1,29 +1,42 @@
+var wintersmith = require("wintersmith");
+
 module.exports = function(grunt) {
 
-  var wintersmith = require("wintersmith");
+  var done = {};
+
+  var callback = function(error) {
+    if(error) {
+      throw error;
+    }
+    if(done) {
+      done();
+    }
+  };
 
   grunt.registerMultiTask("wintersmith", "Use the wintersmith static site generator", function () {
-    var options = this.options({
-        // create the sites environment, can also be called with a config object. e.g.
-        // {contents: '/some/contents', locals: {powerLevel: 10}}, ..}
-        config: "./config.json"
-      }),
-      done = this.async();
 
-    // build site
-    grunt.helper("wintersmith", options, function (error) {
-      if (error) { throw error; }
-      done();
+    var options = this.options();
+    grunt.verbose.writeflags(options, 'Options');
+    var _ = grunt.util._;
+
+    options = _.defaults(options, {
+      action: 'build',
+      config: './config.json'
     });
 
-  });
+    done = this.async();
 
-  grunt.registerHelper("wintersmith", function (options, callback) {
-    // create the sites environment, can also be called with a config object. e.g.
-    // {contents: '/some/contents', locals: {powerLevel: 10}}, ..}
     var env = wintersmith(options.config);
-    // build site
-    env.build(callback);
+
+    if(options.action == 'build') {
+      env.build(callback);
+    } else if(options.action == 'preview') {
+      env.preview(callback);
+    } else {
+      grunt.log.error('Action not supported.  May be build or preview.');
+      done(false);
+    }
+
   });
 
 };
