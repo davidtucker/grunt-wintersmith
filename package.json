@@ -24,11 +24,13 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "wintersmith": "~2.0.5"
+    "wintersmith": "~2.0.5",
+    "grunt-contrib-jshint": "~0.6.1",
+    "grunt-contrib-watch": "~0.5.1"
   },
   "keywords": [
     "gruntplugin"
-  ],  
+  ],
   "engines": {
     "node": "*"
   }
