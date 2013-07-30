@@ -1,14 +1,17 @@
 {
   "author": "adam j. sontag <ajpiano@ajpiano.com> (http://ajpiano.com)",
+  "contributors": [
+    "David Tucker <david@davidtucker.net> (http://davidtucker.net)"
+  ],
   "name": "grunt-wintersmith",
   "description": "A grunt task and helpers for invoking the Wintersmith static site generator",
-  "version": "0.0.1",
-  "homepage": "https://github.com/ajpiano/grunt-wintersmith",
+  "version": "0.1.0",
+  "homepage": "https://github.com/davidtucker/grunt-wintersmith",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ajpiano/grunt-wintersmith.git"
+    "url": "git://github.com/davidtucker/grunt-wintersmith.git"
   },
-   "licenses": [
+  "licenses": [
     {
       "type": "MIT",
       "url": "https://github.com/ajpiano/grunt-wintersmith/blob/master/LICENSE-MIT"
