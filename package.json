@@ -5,7 +5,7 @@
   ],
   "name": "grunt-wintersmith",
   "description": "A grunt task and helpers for invoking the Wintersmith static site generator",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/davidtucker/grunt-wintersmith",
   "repository": {
     "type": "git",
