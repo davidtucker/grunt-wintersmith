@@ -17,8 +17,9 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-wintersmith');
 ```
 
-*This plugin was designed to work with Grunt 0.4.x. If you're still using grunt v0.3.x it's strongly recommended that [you upgrade](http://gruntjs.com/upgrading-from-0.3-to-0.4).
-*This plugin was designed to work with Wintersmith 2.x.  If you're still using v1.x, you should upgrade.
+* This plugin was designed to work with Grunt 0.4.x. If you're still using grunt v0.3.x it's strongly recommended that [you upgrade](http://gruntjs.com/upgrading-from-0.3-to-0.4).
+
+* This plugin was designed to work with Wintersmith 2.x.  If you're still using v1.x, you should upgrade.
 
 ## Wintersmith task
 
